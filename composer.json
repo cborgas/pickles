@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Pest\\PluginName\\": "src/"
+            "Pest\\Pickles\\": "src/"
         },
         "files": [
             "src/Autoload.php"
@@ -27,6 +27,11 @@
     },
     "require-dev": {
         "pestphp/pest-dev-tools": "^2.9"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pest\\Pickles\\Tests\\": "tests/"
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

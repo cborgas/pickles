@@ -1,11 +1,25 @@
 <?php
 
-use function Pest\PluginName\example;
+declare(strict_types=1);
 
-it('may be accessed on the `$this` closure', function () {
-    $this->example('foo');
+use function Pest\Pickles\given;
+use function Pest\Pickles\then;
+use function Pest\Pickles\when;
+
+it('given may be accessed as function', function (): void {
+    given('foo', function (): void {
+        expect(true)->toBeTrue();
+    });
 });
 
-it('may be accessed as function', function () {
-    example('foo');
+it('when may be accessed as function', function (): void {
+    when('foo', function (): void {
+        expect(true)->toBeTrue();
+    });
+});
+
+it('then may be accessed as function', function (): void {
+    then('foo', function (): void {
+        expect(true)->toBeTrue();
+    });
 });

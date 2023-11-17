@@ -2,17 +2,27 @@
 
 declare(strict_types=1);
 
-namespace Pest\PluginName;
+namespace Pest\Pickles;
 
+use Closure;
 use Pest\Plugin;
-use PHPUnit\Framework\TestCase;
 
-Plugin::uses(Example::class);
+Plugin::uses(Pickles::class);
 
-/**
- * @return TestCase
- */
-function example(string $argument)
+function given(string $step, Closure $given): void
 {
-    return test()->example(...func_get_args()); // @phpstan-ignore-line
+    $test = test();
+    $test->given($step, $given->bindTo($test)); // @phpstan-ignore-line
+}
+
+function when(string $step, Closure $when): void
+{
+    $test = test();
+    $test->when($step, $when->bindTo($test)); // @phpstan-ignore-line
+}
+
+function then(string $step, Closure $then): void
+{
+    $test = test();
+    $test->then($step, $then->bindTo($test)); // @phpstan-ignore-line
 }
