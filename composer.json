@@ -1,6 +1,6 @@
 {
-    "name": "pestphp/pest-plugin-template",
-    "description": "My awesome plugin",
+    "name": "cborgas/pickles",
+    "description": "A Plugin for Pest to enable BDD style testing with the Gherkin syntax",
     "keywords": [
         "php",
         "framework",
